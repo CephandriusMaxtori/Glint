@@ -33,7 +33,7 @@ export function configToMarkers(config: ShaderConfig): TemplateMarkers {
   const reflCode = config.water.reflections
     ? [
         '#ifdef REFLECTIONS_ENABLED',
-        '    vec4 reflection = texture2D(colortex1, texcoord);',
+        '    vec4 reflection = texture(colortex1, texcoord);',
         '    albedo.rgb = mix(albedo.rgb, reflection.rgb, 0.3);',
         '#endif',
       ].join('\n    ')
