@@ -1,32 +1,25 @@
-# React + TypeScript + Vite
+# Glint — Minecraft Shader Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A web-based Minecraft shader generator that lets you visually configure shader settings and export a working Iris/OptiFine shaderpack zip, with a pixel-accurate WebGL2 preview.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Visual shader configuration (water, shadows, sky, lighting, post-processing)
+- Pixel-accurate WebGL2 preview running the same GLSL as the export
+- Export to a complete Iris/OptiFine shaderpack `.zip`
+- Presets: Vanilla+, Tropical, Murky Swamp
+- Fully client-side — no backend, no telemetry, no accounts
 
-## React Compiler
+## Development
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Build
+
+```bash
+npm run build
+npm run preview
+```
