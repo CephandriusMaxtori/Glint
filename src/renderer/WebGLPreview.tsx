@@ -214,9 +214,10 @@ export function WebGLPreview() {
     }
 
     // Get or create programs
-    let progTerrain = shaderCache.getOrCreate(gl, fillTemplate(terrainVert, {}), fillTemplate(terrainFrag, {}))!
-    let progWater = shaderCache.getOrCreate(gl, fillTemplate(waterVert, {}), fillTemplate(waterFrag, {}))!
-    let progFinal = shaderCache.getOrCreate(gl, fillTemplate(finalVert, {}), fillTemplate(finalFrag, {}))!
+    const initialMarkers = configToMarkers(useStore.getState().config)
+    let progTerrain = shaderCache.getOrCreate(gl, fillTemplate(terrainVert, initialMarkers), fillTemplate(terrainFrag, initialMarkers))!
+    let progWater = shaderCache.getOrCreate(gl, fillTemplate(waterVert, initialMarkers), fillTemplate(waterFrag, initialMarkers))!
+    let progFinal = shaderCache.getOrCreate(gl, fillTemplate(finalVert, initialMarkers), fillTemplate(finalFrag, initialMarkers))!
 
     let time = 0
     let animId = 0
