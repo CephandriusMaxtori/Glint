@@ -8,7 +8,6 @@ in vec4 aColor;
 in vec3 aNormal;
 uniform mat4 projectionMatrix;
 uniform mat4 viewMatrix;
-uniform float frameTimeCounter;
 
 out vec2 texcoord;
 out vec2 lightcoord;

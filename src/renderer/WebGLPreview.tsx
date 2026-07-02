@@ -281,7 +281,7 @@ export function WebGLPreview() {
       for (const g of scene.groups) {
         gl.activeTexture(gl.TEXTURE0)
         gl.bindTexture(gl.TEXTURE_2D, g.texture)
-        gl.uniform1i(progTerrain.uniforms['texture'], 0)
+        gl.uniform1i(progTerrain.uniforms['tex'], 0)
         gl.bindVertexArray(g.vao)
         gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, g.ibuf)
         gl.drawElements(gl.TRIANGLES, g.indexCount, gl.UNSIGNED_SHORT, 0)
@@ -296,7 +296,7 @@ export function WebGLPreview() {
       gl.uniform1f(progWater.uniforms['frameTimeCounter'], time)
       gl.activeTexture(gl.TEXTURE0)
       gl.bindTexture(gl.TEXTURE_2D, scene.waterGroup.texture)
-      gl.uniform1i(progWater.uniforms['texture'], 0)
+      gl.uniform1i(progWater.uniforms['tex'], 0)
       gl.activeTexture(gl.TEXTURE1)
       gl.bindTexture(gl.TEXTURE_2D, lightmapTex)
       gl.uniform1i(progWater.uniforms['lightmap'], 1)

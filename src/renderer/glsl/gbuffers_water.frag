@@ -6,7 +6,7 @@ in vec2 lightcoord;
 in vec4 vertexColor;
 in vec3 eyeNormal;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform sampler2D lightmap;
 
 layout(location = 0) out vec4 fragColor0;
@@ -20,7 +20,7 @@ uniform sampler2D colortex1;
 #endif
 
 void main() {
-    vec4 albedo = texture(texture, texcoord) * vertexColor;
+    vec4 albedo = texture(tex, texcoord) * vertexColor;
     albedo.rgb *= waterTint;
 
     vec4 lm = texture(lightmap, lightcoord);

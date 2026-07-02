@@ -6,7 +6,7 @@ in vec2 lightcoord;
 in vec4 vertexColor;
 in vec3 eyeNormal;
 
-uniform sampler2D texture;
+uniform sampler2D tex;
 uniform sampler2D lightmap;
 
 layout(location = 0) out vec4 fragColor0;
@@ -18,7 +18,7 @@ const float TORCH_INTENSITY = //__TORCH_INTENSITY__;
 const float TIME_TINT = //__TIME_TINT__;
 
 void main() {
-    vec4 albedo = texture(texture, texcoord) * vertexColor;
+    vec4 albedo = texture(tex, texcoord) * vertexColor;
     vec4 lm = texture(lightmap, lightcoord);
 
     vec3 torchLight = mix(vec3(1.0), TORCH_COLOR, TORCH_INTENSITY);
