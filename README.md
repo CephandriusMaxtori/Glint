@@ -1,5 +1,7 @@
 # Glint — Minecraft Shader Generator
 
+![WIP](https://img.shields.io/badge/status-WIP-yellow)
+
 A web-based Minecraft shader generator that lets you visually configure shader settings and export a working Iris/OptiFine shaderpack zip, with a pixel-accurate WebGL2 preview.
 
 ## Features
